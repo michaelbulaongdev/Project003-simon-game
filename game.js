@@ -51,13 +51,13 @@ function flashButton(y) {
     activeButton.addClass("pressed");
     setTimeout(() => {
         activeButton.removeClass("pressed");
-    },  500);
+    },  200);
 }
 
 function addSequence() {
     var randomNum = (Math.floor(Math.random() * 4) + 1);
     sequence.push("" + randomNum + "");
-    // console.log(sequence);
+    console.log(sequence);
     return sequence;
 }
 
@@ -72,9 +72,10 @@ function levelUp() {
 }
 
 function gameOver() {
-    $("h1").text("Game Over");
+    $("h1").text("Game Over! Press any key to restart.");
     $("body").addClass("game-over");
     gameover.play();
+    gameLevel = 0;
 }
 
 function checkAnswer() {
@@ -98,7 +99,12 @@ console.log("Game level " + gameLevel);
 
 $(document).keypress(function () {
     if (gameLevel === 0) {
-        levelUp();
+        sequence = [];
+        input = [];
+        $("body").removeClass("game-over");
+        setTimeout(() => {
+            levelUp();
+        }, 500);
     }
 });
 
@@ -108,7 +114,7 @@ $("div.btn").click(function () {
         flashButton(this.innerHTML);
         var inputKey = this.innerHTML;
         input.push(inputKey);
-        // console.log(input);
+        console.log(input);
     }
     if (input.length === gameLevel) {
         checkAnswer();
