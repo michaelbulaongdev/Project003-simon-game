@@ -57,7 +57,7 @@ function flashButton(y) {
 function addSequence() {
     var randomNum = (Math.floor(Math.random() * 4) + 1);
     sequence.push("" + randomNum + "");
-    console.log(sequence);
+    // console.log(sequence);
     return sequence;
 }
 
@@ -76,6 +76,7 @@ function gameOver() {
     $("body").addClass("game-over");
     gameover.play();
     gameLevel = 0;
+    console.log("Game level " + gameLevel);
 }
 
 function checkAnswer() {
@@ -114,7 +115,7 @@ $("div.btn").click(function () {
         flashButton(this.innerHTML);
         var inputKey = this.innerHTML;
         input.push(inputKey);
-        console.log(input);
+        // console.log(input);
     }
     if (input.length === gameLevel) {
         checkAnswer();
