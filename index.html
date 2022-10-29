@@ -5,24 +5,31 @@
   <meta charset="utf-8">
   <title>Simon</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
 
 <body>
-  <h1 id="level-title">Press Any Key to Begin</h1>
-  <div class="container">
+  <div class="banner">
+    <a href="#how-to-play">How to play the Simon Game</a>
+  </div>
 
+  <h1 id="level-title">Press Any Key to Begin</h1>
+
+  <div class="container">
     <div class="row">
       <div type="button" id="green" class="key1 btn green">1</div>
       <div type="button" id="red" class="key2 btn red">2</div>
     </div>
-
     <div class="row">
       <div type="button" id="yellow" class="key3 btn yellow">3</div>
       <div type="button" id="blue" class="key4 btn blue">4</div>
     </div>
-
   </div>
+
+  <iframe id="how-to-play" width="560" height="315" src="https://www.youtube.com/embed/EWJ5uYwQJGU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="game.js"></script>
