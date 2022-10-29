@@ -1,4 +1,3 @@
-
 //Definitions
 
 var green = new Audio('sounds/green.mp3')
@@ -6,6 +5,7 @@ var red = new Audio('sounds/red.mp3')
 var yellow = new Audio('sounds/yellow.mp3')
 var blue = new Audio('sounds/blue.mp3')
 var gameover = new Audio('sounds/wrong.mp3')
+
 var gameLevel = 0;
 var sequence = [];
 var input = [];
@@ -129,9 +129,9 @@ assign random number and sound to each colored box
 
 to begin, listen to any click/press;
 
-when any key is pressed:
-
+when any key is pressed: gameLevel 1
 change h1 to Level 1;
+
 generate new random number;
 flash the button of the random number;
 store in array;
