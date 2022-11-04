@@ -64,15 +64,17 @@ function addSequence() {
 function levelUp() {
     addSequence();
     var sequenceNum = sequence[sequence.length-1];
-    flashButton("" + sequenceNum + "");
     gameLevel = sequence.length;
     $("h1").text("Level " + gameLevel);
     console.log("Game level " + gameLevel);
+    setTimeout(() => {
+        flashButton("" + sequenceNum + "");
+    }, 500);
     return gameLevel;
 }
 
 function gameOver() {
-    $("h1").text("Game Over! Press ENTER to restart.");
+    $("h1").text("Game Over! Press START to try again.");
     $("body").addClass("game-over");
     gameover.play();
     gameLevel = 0;
@@ -98,8 +100,8 @@ function checkAnswer() {
 
 console.log("Game level " + gameLevel);
 
-$(document).keypress(function () {
-    if (gameLevel === 0) {
+document.getElementById('button').onclick = function() {
+    if (gameLevel == 0) {
         sequence = [];
         input = [];
         $("body").removeClass("game-over");
@@ -107,7 +109,7 @@ $(document).keypress(function () {
             levelUp();
         }, 500);
     }
-});
+}
 
 $("div.btn").click(function () {
     if (gameLevel > 0) {
@@ -117,39 +119,7 @@ $("div.btn").click(function () {
         input.push(inputKey);
         // console.log(input);
     }
-    if (input.length === gameLevel) {
+    if (input.length === gameLevel && gameLevel != 0) {
         checkAnswer();
     }
 });
-
-
-/*
-create function that generates an array of random numbers between 1-4
-assign random number and sound to each colored box
-
-to begin, listen to any click/press;
-
-when any key is pressed: gameLevel 1
-change h1 to Level 1;
-
-generate new random number;
-flash the button of the random number;
-store in array;
-
-listen for event;
-check if event sequences matches array:
-
-if correct:
-change h1 to Level 2;
-generate new random number;
-flash the button of the random number;
-store in array;
-
-....
-
-continue loop up to Level x = where x is the number of items in the array
-
-else;
-change h1 to Game Over
-play sound for Game Over
-*/
