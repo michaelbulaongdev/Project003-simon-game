@@ -72,7 +72,7 @@ function levelUp() {
 }
 
 function gameOver() {
-    $("h1").text("Game Over! Press any key to restart.");
+    $("h1").text("Game Over! Press ENTER to restart.");
     $("body").addClass("game-over");
     gameover.play();
     gameLevel = 0;
