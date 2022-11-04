@@ -6,22 +6,44 @@ body {
 a {
   font-family: 'Outfit', sans-serif;
   color: aqua;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 a:hover {
-  color: blue;
+  color: aquamarine;
 }
 
 iframe {
   padding: 10% 0 10%;
 }
 
+hr {
+  border-color: aqua;
+  width: 80%;
+}
+
 #level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 1.5rem;
   margin:  5%;
+  line-height: 1.5;
   color: #FEF2BF;
+}
+
+button {
+  min-width: 20%;
+  height: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  background-color: #FEF2BF;
+  border: none;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+}
+
+button:hover {
+  background-color: aquamarine;
 }
 
 .banner {
@@ -35,10 +57,10 @@ iframe {
 }
 
 .btn {
-  margin: 25px;
+  margin: 15px;
   display: inline-block;
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
   border: 10px solid black;
   border-radius: 20%;
   font-size: 0rem;
